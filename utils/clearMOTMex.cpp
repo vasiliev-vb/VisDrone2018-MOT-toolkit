@@ -1,4 +1,3 @@
-#include <matrix.h>
 #include "mex.h"
 #include <cmath>
 #include <omp.h>

@@ -7,9 +7,9 @@ addpath('display');
 addpath('eval');
 addpath(genpath('utils'));
 
-datasetPath = '..\VisDrone2018-MOT-test-challenge\'; % dataset path
-detPath = '..\FasterRCNN-MOT-detections\test-challenge\'; % detection input path
-resPath = '..\test-challenge_MOT_results\'; % result path
+datasetPath = '../VisDrone2019-MOT-val/'; % dataset path
+detPath = '../FasterRCNN-MOT-detections/test-challenge/'; % detection input path
+resPath = '../VisDrone2019-MOT-val/result/'; % result path
 isSeqDisplay = false; % flag to display the detections 
 isNMS = true; % flag to conduct NMS
 nmsThre = 0.6; % threshold of NMS
@@ -23,7 +23,7 @@ gtPath = fullfile(datasetPath, 'annotations'); % annotation path
 seqPath = fullfile(datasetPath, 'sequences'); % sequence path
 
 %% run the tracker
-runTrackerAllClass(isSeqDisplay, isNMS, detPath, resPath, seqPath, evalClassSet, threSet, nmsThre, trackerName);
+%runTrackerAllClass(isSeqDisplay, isNMS, detPath, resPath, seqPath, evalClassSet, threSet, nmsThre, trackerName);
 
 %% evaluate the tracker
 if(strcmp(evalTask, 'Task4a'))

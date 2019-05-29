@@ -1,5 +1,4 @@
-#include <matrix.h>
-#include "mex.h"
+#include <mex.h>
 #include <cmath>
 #include <omp.h>
 #include <algorithm>
@@ -162,9 +161,10 @@ void mexFunction(int nlhs, mxArray *plhs[],
 	fp = mxGetPr(plhs[1]);
 	fn = mxGetPr(plhs[2]);
 
-#pragma omp parallel for 
+// openmp crashes under linux with octave!
+//#pragma omp parallel for 
 	for (int i = 0; i < numGT; i++) {
-#pragma omp parallel for 
+//#pragma omp parallel for 
 		for (int j = 0; j < numPred; j++) {
 
 

@@ -15,7 +15,7 @@ for fr = 1:numFr
         for j = 1:numIgr
             igrMap(igrRegion(j,2):min(imgHeight,igrRegion(j,2)+igrRegion(j,4)),igrRegion(j,1):min(imgWidth,igrRegion(j,1)+igrRegion(j,3))) = 1;
         end
-        intIgrMap = createIntImg(double(igrMap));
+        intIgrMap = integralImage(double(igrMap));
         idxLeft = [];
         for i = 1:size(curdet, 1)
             pos = max(1,round(curdet(i,3:6)));
